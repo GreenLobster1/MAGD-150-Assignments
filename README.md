@@ -14,3 +14,5 @@ Descrption:lab 4. Pizza design.
 ## Example 5-
 Descrption:lab 5. TV design with channels.
 [Visit Example](https://github.com/GreenLobster1/MAGD-150-Assignments/blob/gh-pages/sketch.js)
+
+
