@@ -1,69 +1,86 @@
-let bubbles = [];
-
-
-
+//move left for circle pizza 
+//more right for square pizza
+//click for pepperoni toppings 
+//click left arrow for pinapple toppings
 
 function setup() {
-  createCanvas(600, 400);
-  for (let i = 0; i < 10; i++) {
-  bubbles[i] = new Bubble(220,200,20);
-    }
-  }
+  createCanvas(400, 400);
+}
 
 function draw() {
-  background(0);
+  background(255, 51, 245 );
   
+if (mouseX <200){
+  //pizza 1
   push();
-    c = color('rgb(0,0,255)');
-  fill(c); 
-  noStroke()
-    rect(300,200,80,120)
-    ellipse(340,200,60,60)
-    rect(335,150,10,30)
-    rect(300,150,45,10)
+  fill(240, 203, 6);
+  ellipse(200,200,200,200);
+  pop();
+  push();
+  fill(246, 230, 149);
+  ellipse(200,200,175,175);
+  pop();
+  //left_key for pineapple
+if(keyIsDown(LEFT_ARROW)){
+  translate(-5,-5);
+stroke(0);
+fill(243, 246, 9);
+rect(160,160,20,20);  
+rect(240,160,20,20);  
+rect(160,240,20,20);  
+rect(240,240,20,20);  
+}        
   
+//pizza with circles
+if(mouseIsPressed==true){
+ for (let j=1; j<25;j++){
+     fill(246, 23, 9);
+     ellipse(width/2+(40*cos(j*PI/6)), height/2+(40*sin(j*PI/6)), 10, 10);
+     ellipse(width/2+(60*cos(j*PI/6)), height/2+(60*sin(j*PI/6)), 10, 10);
+     ellipse(width/2+(80*cos(j*PI/12)), height/2+(80*sin(j*PI/12)), 10, 10);
+}
+}  
+  
+}else{
+//pizza 2
+  push();
+  strokeWeight(8);
+  stroke(240, 203, 6)
+  fill(246, 230, 149)
+  rect(100,100,200,200)
   pop();
   
-  print("press and hold for bubbles")
+    //left_key for pineapple
+if(keyIsDown(LEFT_ARROW)){
+  translate(-5,-5);
+stroke(0);
+fill(243, 246, 9);
+rect(160,160,20,20);  
+rect(240,160,20,20);  
+rect(160,240,20,20);  
+rect(240,240,20,20);  
+}        
   
-    let s = 'bubble bottle';
-fill(900);
-text(s, 300, 250, 70, 80); 
-  
-  
-  if(rect,mouseIsPressed==true)
+
+if(mouseIsPressed==true) {
+  for(let x=100;x<260;x++){
+    x=x+20
+  fill(246, 23, 9);
+  ellipse(x,150,20,20)
     
-  
-  for (let i = 0; i < bubbles.length; i++) {
-    let x = 10+30 *i;
-    bubbles[i].move();
-    bubbles[i].show();
+    for(let x=100;x<260;x++){
+    x=x+20
+  fill(246, 23, 9);
+  ellipse(x,200,20,20)
+      
+      for(let x=100;x<260;x++){
+    x=x+20
+  fill(246, 23, 9);
+  ellipse(x,250,20,20)
+        
   }
 }
-
-class Bubble {
-  constructor(x,y,r){
-    this.x = x;
-    this.y = y;
-    this.r = r;
-  }
-  
-  move() {
-    this.x = this.x + random(-5,5);
-    this.y = this.y + random(-5,5);
-  }
-  
-  show() {
-    stroke(255);
-    strokeWeight(4);
-    fill(255,204,0);
-    ellipse(this.x, this.y, this.r * 2);
-    
+}
   }
 }
-
-
-
-
-
-
+}
